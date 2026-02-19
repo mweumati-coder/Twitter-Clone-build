@@ -112,6 +112,10 @@ Notes:
 - Do NOT add the Supabase `service_role` key to client environment variables; keep it secret.
 - Once deployed, set the same env vars in Vercel for Production and Preview to match your Supabase project.
 
+## Demo mode
+- The project supports a `DEMO_MODE` that runs an in-memory mock of Supabase so you can try the UI without creating a Supabase project.
+- When `DEMO_MODE=true` locally the server uses a persistent JSON file `.demo_data.json` (in project root) to keep demo data across restarts; this file is ignored in git.
+- The browser mock uses `localStorage` so demo actions persist per-browser session as well.
 ---
 
 ## 🛠 Tech Stack

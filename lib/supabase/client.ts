@@ -1,9 +1,9 @@
 import { createBrowserClient } from '@supabase/ssr';
-import { createMockClient } from './mock';
+import { createMockClientBrowser } from './mock';
 
 export function createClient(): any {
   if (process.env.DEMO_MODE === 'true') {
-    return createMockClient();
+    return createMockClientBrowser();
   }
 
   return createBrowserClient(
