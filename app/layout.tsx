@@ -4,6 +4,8 @@ import { AuthProvider } from '@/components/auth/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import ThemeProvider from '@/components/layout/ThemeProvider';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Chirp — What\'s happening',
   description: 'A Twitter clone built with Next.js and Supabase',
