@@ -63,6 +63,18 @@ export default function RightPanel() {
     setSuggestions(prev => prev.filter(p => p.id !== profileId));
   };
 
+  const handleResetDemo = async () => {
+    if (!confirm('Reset demo data to defaults? This cannot be undone.')) return;
+    try {
+      const res = await fetch('/api/demo/reset', { method: 'POST' });
+      if (!res.ok) throw new Error('Failed');
+      // simple reload to pick up reset data
+      window.location.reload();
+    } catch (e) {
+      alert('Could not reset demo data.');
+    }
+  };
+
   return (
     <div className={styles.panel}>
       {/* Search bar */}
@@ -118,6 +130,11 @@ export default function RightPanel() {
 
       <p className={styles.footer}>
         © 2025 Chirp Clone · Built with Next.js & Supabase
+        {process.env.NEXT_PUBLIC_DEMO_MODE === 'true' && (
+          <button onClick={handleResetDemo} className={styles.resetBtn} style={{ marginLeft: 12 }}>
+            Reset Demo
+          </button>
+        )}
       </p>
     </div>
   );
