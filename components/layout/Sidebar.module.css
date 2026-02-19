@@ -1,0 +1,259 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 8px 12px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  transition: background 0.15s;
+  margin-bottom: 4px;
+}
+
+.logo:hover {
+  background: var(--accent-light);
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.navItem:hover {
+  background: var(--bg-hover);
+}
+
+.navItem.active {
+  font-weight: 700;
+}
+
+.navLabel {
+  font-size: 20px;
+}
+
+.tweetBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--accent);
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 16px 24px;
+  margin-top: 16px;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.tweetBtn:hover {
+  background: var(--accent-hover);
+}
+
+.tweetBtn:active {
+  transform: scale(0.97);
+}
+
+.tweetBtnIcon {
+  flex-shrink: 0;
+}
+
+.tweetBtnLabel {
+  display: block;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 12px;
+}
+
+.themeBtn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-size: 18px;
+  color: var(--text-primary);
+  transition: background 0.15s;
+  width: 100%;
+  text-align: left;
+}
+
+.themeBtn:hover {
+  background: var(--bg-hover);
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 50px;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+.profileSection:hover {
+  background: var(--bg-hover);
+}
+
+.profileLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.profileName {
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileUsername {
+  font-size: 14px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.signOutBtn {
+  color: var(--text-secondary);
+  padding: 6px;
+  border-radius: 50%;
+  transition: color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.signOutBtn:hover {
+  color: var(--danger);
+  background: var(--danger-light);
+}
+
+/* Collapsed sidebar for medium screens */
+@media (max-width: 1200px) {
+  .navLabel,
+  .tweetBtnLabel,
+  .profileInfo,
+  .themeBtn span {
+    display: none;
+  }
+
+  .tweetBtn {
+    width: 49px;
+    height: 49px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .navItem {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .profileSection {
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .profileLink {
+    gap: 0;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .themeBtn {
+    justify-content: center;
+    gap: 0;
+    padding: 12px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+  }
+}
+
+/* Mobile bottom bar */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    height: 60px;
+    justify-content: space-around;
+  }
+
+  .top {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+  }
+
+  .navList {
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+  }
+
+  .navItem {
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .logo, .tweetBtn, .bottom {
+    display: none;
+  }
+
+  .navLabel {
+    display: none;
+  }
+}

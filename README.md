@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐦 Chirp — Twitter Clone
 
-## Getting Started
+A full-featured Twitter clone built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **Supabase**.
 
-First, run the development server:
+## ✨ Features
+
+- 🔐 **Authentication** — Sign up, sign in, sign out (Supabase Auth)
+- 🏠 **Home Feed** — Tweets from people you follow
+- 📝 **Tweet** — Post tweets with text and images
+- ❤️ **Like / Retweet / Bookmark** — Interact with tweets
+- 💬 **Replies** — Reply to any tweet
+- 🔔 **Notifications** — Likes, follows, replies
+- 🔍 **Explore** — Search tweets and people
+- 👤 **Profiles** — Follow/unfollow, view profile stats
+- 🌙 **Dark / Light Mode** — Toggle with persistence
+- 📱 **Responsive** — Mobile bottom bar, tablet, desktop
+
+---
+
+## 🚀 Getting Started
+
+### 1. Create a Supabase Account
+
+1. Go to [supabase.com](https://supabase.com) and click **Start for Free**
+2. Sign up with GitHub or email
+3. Click **New project**
+4. Choose a name (e.g., `chirp-clone`), set a database password, pick a region
+5. Wait ~2 minutes for the project to be ready
+
+### 2. Set Up the Database
+
+1. In your Supabase dashboard → **SQL Editor** → **New query**
+2. Open `supabase/schema.sql` from this project
+3. Copy ALL contents → paste into SQL editor → click **Run**
+
+### 3. Get Your API Keys
+
+1. Supabase dashboard → **Settings → API**
+2. Copy **Project URL** and **anon / public key**
+
+### 4. Configure Environment Variables
+
+Create a `.env.local` file in the project root:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> ⚠️ `.env.local` is already in `.gitignore` — never commit it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5. Install & Run
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+twitter-clone/
+├── app/
+│   ├── (auth)/login        # Login page
+│   ├── (auth)/register     # Registration page
+│   └── (main)/
+│       ├── home/           # Home feed
+│       ├── explore/        # Search & trending
+│       ├── notifications/  # Notifications
+│       ├── bookmarks/      # Saved tweets
+│       └── [username]/     # User profile & tweet detail
+├── components/
+│   ├── auth/               # AuthProvider context
+│   ├── layout/             # Sidebar, RightPanel, ThemeProvider
+│   ├── tweet/              # TweetCard, TweetComposer
+│   └── ui/                 # Avatar, shared UI
+├── lib/supabase/           # Supabase client helpers
+├── types/                  # TypeScript interfaces
+└── supabase/schema.sql     # Full database schema + RLS
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📤 Push to GitHub
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+git init
+git add .
+git commit -m "Initial commit: Chirp Twitter Clone"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/chirp-clone.git
+git push -u origin main
+```
+
+---
+
+## 🌐 Deploy to Vercel (Free)
+
+1. Push to GitHub (above)
+2. [vercel.com](https://vercel.com) → **New Project** → Import repo
+3. Add env vars: `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+4. Click **Deploy** 🎉
+
+---
+
+## 🛠 Tech Stack
+
+| Technology      | Purpose                      |
+| --------------- | ---------------------------- |
+| Next.js 14      | React framework (App Router) |
+| TypeScript      | Type safety                  |
+| Tailwind CSS    | Styling                      |
+| Supabase        | Database, Auth, Storage      |
+| lucide-react    | Icons                        |
+| react-hot-toast | Toast notifications          |
+| timeago.js      | Relative timestamps          |
+
+---
+
+MIT License

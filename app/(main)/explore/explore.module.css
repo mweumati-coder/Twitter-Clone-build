@@ -1,0 +1,44 @@
+.header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.title { font-size: 20px; font-weight: 800; }
+
+.searchBox {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50px; padding: 10px 16px;
+  transition: border-color 0.15s;
+}
+.searchBox:focus-within { border-color: var(--accent); }
+.searchIcon { color: var(--text-secondary); flex-shrink: 0; }
+.searchInput { flex: 1; font-size: 15px; }
+
+.loading { display: flex; justify-content: center; padding: 48px; }
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border-color); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.sectionTitle {
+  font-size: 20px; font-weight: 800;
+  padding: 16px; border-bottom: 1px solid var(--border-color);
+}
+
+.userResult {
+  display: flex; gap: 12px; padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.15s;
+}
+.userResult:hover { background: var(--bg-hover); }
+.userName { font-size: 15px; font-weight: 700; }
+.userHandle { font-size: 14px; color: var(--text-secondary); }
+.userBio { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+
+.empty { text-align: center; padding: 48px 24px; color: var(--text-secondary); }

@@ -1,0 +1,94 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--text-secondary);
+}
+
+.empty h3 {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.15s;
+}
+
+.item:hover {
+  background: var(--bg-hover);
+}
+
+.unread {
+  background: rgba(29, 155, 240, 0.03);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 40px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 4px;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.actorName {
+  font-weight: 700;
+}
+
+.actorName:hover {
+  text-decoration: underline;
+}
+
+.time {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
