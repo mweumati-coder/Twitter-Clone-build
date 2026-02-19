@@ -101,9 +101,16 @@ git push -u origin main
 ## 🌐 Deploy to Vercel (Free)
 
 1. Push to GitHub (above)
-2. [vercel.com](https://vercel.com) → **New Project** → Import repo
-3. Add env vars: `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-4. Click **Deploy** 🎉
+2. Go to https://vercel.com → **New Project** → Import your repository
+3. In the Vercel project settings → **Environment Variables** add the following for both Preview and Production:
+	- `NEXT_PUBLIC_SUPABASE_URL` = your Supabase Project URL
+	- `NEXT_PUBLIC_SUPABASE_ANON_KEY` = your anon/public key
+	- `DEMO_MODE` = `false` (disable demo-mode in production)
+4. Click **Deploy** — Vercel will build the Next.js app automatically.
+
+Notes:
+- Do NOT add the Supabase `service_role` key to client environment variables; keep it secret.
+- Once deployed, set the same env vars in Vercel for Production and Preview to match your Supabase project.
 
 ---
 
